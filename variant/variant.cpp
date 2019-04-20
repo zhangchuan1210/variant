@@ -10,6 +10,10 @@ struct function_traits :public function_traits<decltype(&T::operator())> {};
 
 
 
+
+
+
+
 int main()
 {
     std::cout << "Hello World!\n"; 
