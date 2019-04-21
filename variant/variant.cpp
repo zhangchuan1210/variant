@@ -3,6 +3,7 @@
 
 #include "pch.h"
 #include <iostream>
+#include <typeindex>
 template<typename T>
 struct function_traits :public function_traits<decltype(&T::operator())> {};
 template<typename classType,typename ReturnType,typename... Args>
@@ -91,11 +92,11 @@ struct VariantHepler<T, Args...> {
 	
 };
 template<> struct VariantHepler<> {
-	inline static void Destory(type_index id, void * data) {
+	inline static void Destory(std::type_index id, void * data) {
 	    
 	}
-	inline static void move(type_index old_t, void* old_v, void * new_v) {}
-	inline static void copy(type_index old_t, const void * old_v, void * new_v) {}
+	inline static void move(std::type_index old_t, void* old_v, void * new_v) {}
+	inline static void copy(std::type_index old_t, const void * old_v, void * new_v) {}
 
 };
 
@@ -202,7 +203,7 @@ private:
 int main()
 {
 	typedef Variant<int, double, std::string, int> cv;
-	std::cout<<typeid(cv::IndexType<1>)<<std::endl;
+	//std::cout<<typeid(cv::IndexType<1>)<<std::endl;
 	cv v = 10;
 	int i = v.GetIndexOf<std::string>();
 	v.Visit([&](double i) {std::cout<<i<<std::endl; },
