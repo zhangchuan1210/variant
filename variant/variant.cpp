@@ -119,7 +119,7 @@ public:
 		Helper_t::Destory(m_typeIndex, &m_data);
 	}
 	Variant(Variant<Types...>&& old) :m_typeIndex(old.m_typeIndex) {
-	
+		Helper_t::move(old.m_typeIndex, &old.m_data, &m_data);
 	}
 
 }
