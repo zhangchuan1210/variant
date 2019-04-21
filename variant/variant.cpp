@@ -58,6 +58,72 @@ struct IndexType<0, Type, Rest...> {
 
 };
 
+template<typename... Args>
+struct VariantHepler;
+template<typename T,typename... Args>
+struct VariantHepler<T, Args...> {
+	inline static void Destory(type_index id, void * data) {
+		if (id == type_index(typeid(T))) {
+			reinterpret_cast<T*>(data)->~T();
+		}
+		else {
+			VariantHepler<Args...>::Destory(id, data);
+		}
+	}
+	inline static void move(type_index old_t,void *old_v,void * new_v) {
+		if (old_t==type_index(typeid(T))) {
+			new (new_v)T(std::move(*reinterpret_cast<T*>(old_v)));
+
+		}
+		else {
+			VariantHepler<Args...>::move(old_t, old_v, new_v);
+		}
+	}
+	inline static void copy(type_index old_t, const void * old_v, void * new_v) {
+		if (old_t==type_index(typeid(T))) {
+
+			new (new_v)T(*reinterpret_cast<const T*>(old_v));
+		}
+		else {
+			VariantHepler<Args...>::copy(old_t, old_v, new_v);
+		}
+	}
+	
+};
+template<> struct VariantHepler<> {
+	inline static void Destory(type_index id, void * data) {
+	    
+	}
+	inline static void move(type_index old_t, void* old_v, void * new_v) {}
+	inline static void copy(type_index old_t, const void * old_v, void * new_v) {}
+
+};
+
+template<typename... Types>
+class Variant {
+	typedef VariantHepler<Types...> Helper_t;
+	enum {
+		data_size = IntegerMax<sizeof(Types)...>::value,
+		align_size = MaxAlign<Types...>::value
+
+	};
+	using data_t = typename std::aligned_storage<data_size, align_size>::type;
+public:
+
+	template<int index>
+	using IndexType = typename IndexType<Index, Types...>::DataType;
+	Variant(void) :m_typeIndex(typeid(void)),m_index(-1) {}
+
+	~Variant()
+	{
+		Helper_t::Destory(m_typeIndex, &m_data);
+	}
+	Variant(Variant<Types...>&& old) :m_typeIndex(old.m_typeIndex) {
+	
+	}
+
+}
+
 
 
 
