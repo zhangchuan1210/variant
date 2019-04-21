@@ -4,13 +4,15 @@
 #include "pch.h"
 #include <iostream>
 #include <typeindex>
+#include<functional>
+#include<type_traits>
 template<typename T>
 struct function_traits :public function_traits<decltype(&T::operator())> {};
 template<typename classType,typename ReturnType,typename... Args>
-struct function_traits<ReturnType(classType::*)(Args...) const> : {
+struct function_traits<ReturnType(classType::*)(Args...) const> {
 	enum {arity=sizeof...(Args) };
-	typedef std::function<RetureType(Args...)> FunType;
-	typedef RetureType result_type;
+	typedef std::function<ReturnType(Args...)> FunType;
+	typedef ReturnType result_type;
 	typedef std::tuple<Args...> ArgTupleType;
 	template<size_t i>
 	struct arg {
@@ -21,10 +23,10 @@ struct function_traits<ReturnType(classType::*)(Args...) const> : {
 };
 //获取最大的整数
 template<size_t arg,size_t... rest>
-struct IntegerMax :public std::integral_constant<size_t, arg>IntegerMax<rest...>::value ? arg : IntegerMax<rest... >> {};
+struct IntegerMax :public std::integral_constant<size_t, arg>(IntegerMax<rest...>::value )? arg : IntegerMax<rest... >> {};
 
 template<size_t arg>
-struct IntegerMax<arg>:pulbic std::integral_constant<size_t, arg> {};
+struct IntegerMax<arg>:public std::integral_constant<size_t, arg> {};
 
 //获取最大对齐数
 template<typename... Args>
@@ -33,7 +35,7 @@ struct MaxAlign :std::integral_constant<size_t, IntegerMax<std::alignment_of<Arg
 template<typename T,typename... List>
 struct Contains :std::true_type {};
 template<typename T,typename Head,typename... Rest>
-struct Contains : std::conditional<std::is_same<T, Head>::value, true_type, Contains<T, Rest...>>::type {};
+struct Contains<T,Head,Rest...> : std::conditional<std::is_same<T, Head>::value, std::true_type, Contains<T, Rest...>>::type {};
 template<typename T>
 struct Contains<T> :std::false_type {};
 //获取第一个T的索引位置
@@ -52,10 +54,10 @@ template<int index,typename... Types>
 struct IndexType;
 
 template<int Index,typename First,typename... Rest>
-struct IndexType<Index, First, Rest...> :public struct IndexType<Index - 1, Rest...> {};
+struct IndexType<Index, First, Rest...> :public IndexType<Index - 1, Rest...> {};
 template<typename Type,typename... Rest>
 struct IndexType<0, Type, Rest...> {
-	typedef First DataType;
+	typedef Type DataType;
 
 };
 
@@ -63,7 +65,7 @@ template<typename... Args>
 struct VariantHepler;
 template<typename T,typename... Args>
 struct VariantHepler<T, Args...> {
-	inline static void Destory(type_index id, void * data) {
+	inline static void Destory(std::type_index id, void * data) {
 		if (id == type_index(typeid(T))) {
 			reinterpret_cast<T*>(data)->~T();
 		}
@@ -71,7 +73,7 @@ struct VariantHepler<T, Args...> {
 			VariantHepler<Args...>::Destory(id, data);
 		}
 	}
-	inline static void move(type_index old_t,void *old_v,void * new_v) {
+	inline static void move(std::type_index old_t,void *old_v,void * new_v) {
 		if (old_t==type_index(typeid(T))) {
 			new (new_v)T(std::move(*reinterpret_cast<T*>(old_v)));
 
@@ -80,7 +82,7 @@ struct VariantHepler<T, Args...> {
 			VariantHepler<Args...>::move(old_t, old_v, new_v);
 		}
 	}
-	inline static void copy(type_index old_t, const void * old_v, void * new_v) {
+	inline static void copy(std::type_index old_t, const void * old_v, void * new_v) {
 		if (old_t==type_index(typeid(T))) {
 
 			new (new_v)T(*reinterpret_cast<const T*>(old_v));
@@ -112,7 +114,7 @@ class Variant {
 public:
 
 	template<int index>
-	using IndexType = typename IndexType<Index, Types...>::DataType;
+	using IndexType = typename IndexType<index, Types...>::DataType;
 	Variant(void) :m_typeIndex(typeid(void)),m_index(-1) {}
 
 	~Variant()
@@ -148,10 +150,15 @@ public:
 		return (m_typeIndex == type_index(typeid(T)));
 	}
 	bool Empty() const {
-		retrun m_typeIndex == type_index(typeid(void));
+		return m_typeIndex == type_index(typeid(void));
 	}
 
-	type_index Type() const {
+	std::type_index Type() const {
+		return m_typeIndex;
+	}
+	template<typename T>
+	typename std::decay<T>::type& Get()
+	{
 		using U = typename std::decay<T>::type;
 		if (Is<U>()) {
 			std::cout<<typeid(U).name()<<"is not defined.."<<std::endl;
@@ -208,11 +215,11 @@ int main()
 	int i = v.GetIndexOf<std::string>();
 	v.Visit([&](double i) {std::cout<<i<<std::endl; },
 		[&](short i) {std::cout <<i << std::endl; },
-		[](int i) {std::cout<<i<<std::endl; },
-		[](std::string i) {std::cout<<i<<std::endl; }
+		[](int i) {std::cout<<i<<std::endl; }
+		
 		);
 	bool empl = v.Empty();
-	std::cout<<v.Type()().name()<<std::endl;
+	std::cout<<v.Type().name()<<std::endl;
 
 	std::cout << "Hello World!\n"; 
 }
