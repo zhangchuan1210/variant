@@ -121,31 +121,97 @@ public:
 	Variant(Variant<Types...>&& old) :m_typeIndex(old.m_typeIndex) {
 		Helper_t::move(old.m_typeIndex, &old.m_data, &m_data);
 	}
+	Variant(const Variant<Types...>& old) :m_typeIndex(old.m_typeIndex) {
+		Helper_t::copy(old.m_typeIndex, &old.m_data, &m_data);
+	}
+	Variant& operator=(const Variant& old) {
+		Helper_t::copy(old.m_typeIndex, &old.m_data, &m_data);
+		m_typeIndex = old.m_typeIndex;
+		return *this;
+	}
+	Variant& operator=(Variant&& old) {
+		Helper_t::move(old.m_typeIndex, &old.m_typeIndex, &m_data);
+		m_typeIndex = old.m_typeIndex;
+		return *this;
+	}
+	template<class T,class=std::enable_if<Contains<typename std::remove_reference<T>::type,Types...>::value>::type>
+	Variant(T&& value) :m_typeIndex(typeid(void)) {
+		Helper_t::Destory(m_typeIndex, &m_data);
+		typedef typename std::remove_reference<T>::type U;
+		new (&m_data)U(std::forward<T>(value));
+		m_typeIndex = type_index(typeid(T));
 
-}
+	}
+	template<typename T>
+	bool Is() const {
+		return (m_typeIndex == type_index(typeid(T)));
+	}
+	bool Empty() const {
+		retrun m_typeIndex == type_index(typeid(void));
+	}
+
+	type_index Type() const {
+		using U = typename std::decay<T>::type;
+		if (Is<U>()) {
+			std::cout<<typeid(U).name()<<"is not defined.."<<std::endl;
+		}
+		return *(U*)(&m_data);
+
+	}
+	template<typename T>
+	int GetIndexOf() {
+		return Index<T, Types...>::value;
+	}
+	template<typename F>
+	void Visit(F&& f) {
+		using T = typename function_traits<F>::arg<0>::type;
+		if (Is<T>()) {
+			f(Get<T>());
+		}
+	}
+	template<typename F,typename... Rest>
+	void Visit(F&& f, Rest&&... rest) {
+		using T = typename function_traits<F>::arg<0>::type;
+		if (Is<T>()) {
+			Visit(std::forward<F>(f));
+		}
+		else
+		{
+			Visit(std::forward<Rest>(rest)...);
+		}
+
+	}
+	bool operator==(const Variant& rhs) const {
+		return m_typeIndex == rhs.m_typeIndex;
+	}
+
+	bool operator<(const Variant& rhs) const {
+		return m_typeIndex == rhs.m_typeIndex;
+	}
 
 
 
+private:
+	data_t m_data;
+	std::type_index m_typeIndex;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+};
 
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	typedef Variant<int, double, std::string, int> cv;
+	std::cout<<typeid(cv::IndexType<1>)<<std::endl;
+	cv v = 10;
+	int i = v.GetIndexOf<std::string>();
+	v.Visit([&](double i) {std::cout<<i<<std::endl; },
+		[&](short i) {std::cout <<i << std::endl; },
+		[](int i) {std::cout<<i<<std::endl; },
+		[](std::string i) {std::cout<<i<<std::endl; }
+		);
+	bool empl = v.Empty();
+	std::cout<<v.Type()().name()<<std::endl;
+
+	std::cout << "Hello World!\n"; 
 }
