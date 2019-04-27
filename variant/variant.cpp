@@ -6,24 +6,68 @@
 #include <typeindex>
 #include<functional>
 #include<type_traits>
-template<typename T>
-struct function_traits :public function_traits<decltype(&T::operator())> {};
-template<typename classType,typename ReturnType,typename... Args>
-struct function_traits<ReturnType(classType::*)(Args...) const> {
-	enum {arity=sizeof...(Args) };
-	typedef std::function<ReturnType(Args...)> FunType;
-	typedef ReturnType result_type;
-	typedef std::tuple<Args...> ArgTupleType;
-	template<size_t i>
-	struct arg {
-		typedef typename std::tuple_element<i, std::tuple<Args...>>::type type;
+//template<typename T>
+//struct function_traits :public function_traits<decltype(&T::operator())> {};
+//template<typename classType,typename ReturnType,typename... Args>
+//struct function_traits<ReturnType(classType::*)(Args...) const> {
+//	enum {arity=sizeof...(Args) };
+//	typedef std::function<ReturnType(Args...)> FunType;
+//	typedef ReturnType result_type;
+//	typedef std::tuple<Args...> ArgTupleType;
+//	template<size_t i>
+//	struct arg {
+//		typedef typename std::tuple_element<i, std::tuple<Args...>>::type type;
+//
+//	};
+//
+//};
 
+template<typename F>
+struct function_traits;
+
+template<typename Ret, typename... Args>
+struct function_traits<Ret(Args...)>
+{
+public:
+	enum { arity = sizeof...(Args) };
+	typedef Ret function_type(Args...);
+	typedef Ret return_type;
+	using stl_function_type = std::function<function_type>;
+	typedef Ret(*pointer)(Args...);
+
+	template<size_t I>
+	struct args
+	{
+		static_assert(I < arity, "index is out of range, index must less than sizeof Args");
+		using type = typename std::tuple_element<I, std::tuple<Args...>>::type;
 	};
-
 };
-//获取最大的整数
+
+//����ָ��
+template<typename Ret, typename... Args>
+struct function_traits<Ret(*)(Args...)> : function_traits<Ret(Args...)> {};
+
+//std::function
+template <typename Ret, typename... Args>
+struct function_traits<std::function<Ret(Args...)>> : function_traits<Ret(Args...)> {};
+
+//member function
+#define FUNCTION_TRAITS(...) \
+    template <typename ReturnType, typename ClassType, typename... Args>\
+    struct function_traits<ReturnType(ClassType::*)(Args...) __VA_ARGS__> : function_traits<ReturnType(Args...)>{}; \
+
+FUNCTION_TRAITS()
+FUNCTION_TRAITS(const)
+FUNCTION_TRAITS(volatile)
+FUNCTION_TRAITS(const volatile)
+
+template<typename Callable>
+struct function_traits :function_traits<decltype(&Callable::operator())> {};
+
+
+//
 template<size_t arg,size_t... rest>
-struct IntegerMax :public std::integral_constant<size_t, arg>(IntegerMax<rest...>::value )? arg : IntegerMax<rest... >> {};
+struct IntegerMax :public std::integral_constant<size_t, (arg>(IntegerMax<rest...>::value ))? arg : IntegerMax<rest... >::value> {};
 
 template<size_t arg>
 struct IntegerMax<arg>:public std::integral_constant<size_t, arg> {};
@@ -115,7 +159,7 @@ public:
 
 	template<int index>
 	using IndexType = typename IndexType<index, Types...>::DataType;
-	Variant(void) :m_typeIndex(typeid(void)),m_index(-1) {}
+	Variant(void) :m_typeIndex(typeid(void)),m_data(-1) {}
 
 	~Variant()
 	{
@@ -170,7 +214,7 @@ public:
 	int GetIndexOf() {
 		return Index<T, Types...>::value;
 	}
-	template<typename F>
+	/*template<typename F>
 	void Visit(F&& f) {
 		using T = typename function_traits<F>::arg<0>::type;
 		if (Is<T>()) {
@@ -188,7 +232,7 @@ public:
 			Visit(std::forward<Rest>(rest)...);
 		}
 
-	}
+	}*/
 	bool operator==(const Variant& rhs) const {
 		return m_typeIndex == rhs.m_typeIndex;
 	}
@@ -205,21 +249,34 @@ private:
 
 
 };
+template<typename F>
+typename function_traits<F>::stl_function_type to_function(F&& f) {
+	return static_cast<typename function_traits<F>::stl_function_type>(std::forward<F>(f));
+}
+
+template<typename F>
+typename function_traits<F>::stl_function_type to_function(const F& f) {
+	return static_cast<typename function_traits<F>::stl_function_type>(std::move(f));
+}
 
 
 int main()
 {
 	typedef Variant<int, double, std::string, int> cv;
+
+
 	//std::cout<<typeid(cv::IndexType<1>)<<std::endl;
-	cv v = 10;
+	/*cv v = 10;
 	int i = v.GetIndexOf<std::string>();
-	v.Visit([&](double i) {std::cout<<i<<std::endl; },
-		[&](short i) {std::cout <<i << std::endl; },
+	v.Visit([](double i) {std::cout<<i<<std::endl; },
+		[](short i) {std::cout <<i << std::endl; },
 		[](int i) {std::cout<<i<<std::endl; }
 		
 		);
 	bool empl = v.Empty();
 	std::cout<<v.Type().name()<<std::endl;
-
+*/
+	
+	auto f=to_function([](int i) {return i; });
 	std::cout << "Hello World!\n"; 
 }

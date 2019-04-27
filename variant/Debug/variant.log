@@ -1,5 +1,5 @@
-﻿生成启动时间为 2019/4/21 21:20:21。
-     1>项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”在节点 2 上(Build 个目标)。
+﻿生成启动时间为 2019/4/27 13:46:43。
+     1>项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”在节点 2 上(Rebuild 个目标)。
      1>正在使用工具版本“15.0”进行生成。
        由于条件的计算结果为 false，已跳过目标“EnableIntermediateOutputPathMismatchWarning”；('$(RestoreProjectStyle)' == 'PackageReference')的计算结果为('' == 'PackageReference')。
      1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets”中的目标“_CheckForInvalidConfigurationAndPlatform”(目标“SetTelemetryEnvironmentVariables”依赖于它):
@@ -19,33 +19,67 @@
        由于 false 条件，已跳过任务“Warning”；( '$(EnableBaseIntermediateOutputPathMismatchWarning)' == 'true' And '$(_InitialBaseIntermediateOutputPath)' != '$(BaseIntermediateOutputPath)' And '$(BaseIntermediateOutputPath)' != '$(MSBuildProjectExtensionsPath)' )计算为( '' == 'true' And 'obj\' != 'obj\' And 'obj\' != 'C:\Users\chuan\source\repos\c++\day01\variant\variant\obj\' )。
      1>已完成在项目“variant.vcxproj”中生成目标“_CheckForInvalidConfigurationAndPlatform”的操作。
        已跳过目标“_CheckForInvalidConfigurationAndPlatform”。以前的生成已成功。
-     1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Cpp.DesignTime.targets”中的目标“SetTelemetryEnvironmentVariables”(目标“Build”依赖于它):
+     1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Cpp.DesignTime.targets”中的目标“SetTelemetryEnvironmentVariables”(目标“Rebuild”依赖于它):
        正在使用程序集“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Build.CppTasks.Common.dll”中的“SetEnv”任务。
        任务“SetEnv”
          VSTEL_SolutionSessionID={FDDF2768-B0CF-4D71-946C-0539B2F53BCE}
        已完成执行任务“SetEnv”的操作。
        任务“SetEnv”
-         VSTEL_CurrentSolutionBuildID=34962171
+         VSTEL_CurrentSolutionBuildID=526144359
        已完成执行任务“SetEnv”的操作。
        任务“SetEnv”
          VSTEL_ProjectID={B56F1D4E-7F8F-4272-91DE-2623CA78C174}
        已完成执行任务“SetEnv”的操作。
      1>已完成在项目“variant.vcxproj”中生成目标“SetTelemetryEnvironmentVariables”的操作。
-     1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.BuildSteps.Targets”中的目标“_PrepareForBuild”(目标“Build”依赖于它):
-       由于 false 条件，已跳过任务“CreateItem”；('%(CustomBuild.IncludeFileToTool)'!='')计算为(''!='')。
-     1>已完成在项目“variant.vcxproj”中生成目标“_PrepareForBuild”的操作。
-     1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets”中的目标“_PrepareForReferenceResolution”(目标“ResolveReferences”依赖于它):
-       由于 false 条件，已跳过任务“Message”；('$(_REFERENCE_DEBUG)'=='true')计算为(''=='true')。
-     1>已完成在项目“variant.vcxproj”中生成目标“_PrepareForReferenceResolution”的操作。
-       由于条件的计算结果为 false，已跳过目标“ComputeCrtSDKReference”；('@(ClCompile)'!='' and '$(WindowsAppContainer)'=='true' and '$(UseCrtSDKReference)' != 'false')的计算结果为('pch.cpp;variant.cpp'!='' and 'false'=='true' and '' != 'false')。
-     1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets”中的目标“BeforeResolveReferences”(目标“ResolveReferences”依赖于它):
-     1>已完成在项目“variant.vcxproj”中生成目标“BeforeResolveReferences”的操作。
-     1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets”中的目标“AssignProjectConfiguration”(目标“ResolveReferences”依赖于它):
+     1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.BuildSteps.Targets”中的目标“_PrepareForRebuild”(目标“Rebuild”依赖于它):
+     1>已完成在项目“variant.vcxproj”中生成目标“_PrepareForRebuild”的操作。
+     1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets”中的目标“BeforeRebuild”(目标“Rebuild”依赖于它):
+     1>已完成在项目“variant.vcxproj”中生成目标“BeforeRebuild”的操作。
+     1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.BuildSteps.Targets”中的目标“_PrepareForClean”(目标“Clean”依赖于它):
+       正在使用程序集“Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a”中的“Delete”任务。
+       任务“Delete”
+         正在删除文件“Debug\variant.tlog\variant.lastbuildstate”。
+       已完成执行任务“Delete”的操作。
+     1>已完成在项目“variant.vcxproj”中生成目标“_PrepareForClean”的操作。
+     1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets”中的目标“BeforeClean”(目标“Clean”依赖于它):
+     1>已完成在项目“variant.vcxproj”中生成目标“BeforeClean”的操作。
+       由于条件的计算结果为 false，已跳过目标“UnmanagedUnregistration”；((('$(_AssemblyTimestampBeforeCompile)' != '$(_AssemblyTimestampAfterCompile)' or '$(RegisterForComInterop)' != 'true' or '$(OutputType)' != 'library') or
+                           ('$(_AssemblyTimestampBeforeCompile)' == '')) and
+                          Exists('@(_UnmanagedRegistrationCache)'))的计算结果为((('' != '' or '' != 'true' or 'exe' != 'library') or
+                           ('' == '')) and
+                          Exists('obj\variant.vcxproj.UnmanagedRegistration.cache'))。
+     1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets”中的目标“CoreClean”(目标“Clean”依赖于它):
+       任务“Delete”
+         文件“Debug\\TempCA\variant.pdb”不存在。正在跳过。
+         文件“Debug\\TempCA\variant.exe”不存在。正在跳过。
+       已完成执行任务“Delete”的操作。
+       正在使用程序集“Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a”中的“ReadLinesFromFile”任务。
+       任务“ReadLinesFromFile”
+       已完成执行任务“ReadLinesFromFile”的操作。
+       正在使用程序集“Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a”中的“FindUnderPath”任务。
+       任务“FindUnderPath”
+         比较路径为“C:\Users\chuan\source\repos\c++\day01\variant\Debug\”。
+       已完成执行任务“FindUnderPath”的操作。
+       任务“FindUnderPath”
+         比较路径为“Debug\”。
+       已完成执行任务“FindUnderPath”的操作。
+       任务“Delete”
+       已完成执行任务“Delete”的操作。
+       正在使用程序集“Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a”中的“RemoveDuplicates”任务。
+       任务“RemoveDuplicates”
+       已完成执行任务“RemoveDuplicates”的操作。
+       正在使用程序集“Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a”中的“MakeDir”任务。
+       任务“MakeDir”
+       已完成执行任务“MakeDir”的操作。
+       正在使用程序集“Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a”中的“WriteLinesToFile”任务。
+       任务“WriteLinesToFile”
+       已完成执行任务“WriteLinesToFile”的操作。
+     1>已完成在项目“variant.vcxproj”中生成目标“CoreClean”的操作。
+     1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets”中的目标“AssignProjectConfiguration”(目标“PrepareProjectReferences”依赖于它):
        正在使用程序集“Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a”中的“AssignProjectConfiguration”任务。
        任务“AssignProjectConfiguration”
        已完成执行任务“AssignProjectConfiguration”的操作。
      1>已完成在项目“variant.vcxproj”中生成目标“AssignProjectConfiguration”的操作。
-       已跳过目标“AssignProjectConfiguration”。以前的生成已成功。
      1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets”中的目标“_SplitProjectReferencesByFileExistence”(目标“PrepareProjectReferences”依赖于它):
        由于 false 条件，已跳过任务“ResolveNonMSBuildProjectOutput”；('$(BuildingInsideVisualStudio)'=='true' and '@(ProjectReferenceWithConfiguration)'!='')计算为('true'=='true' and ''!='')。
      1>已完成在项目“variant.vcxproj”中生成目标“_SplitProjectReferencesByFileExistence”的操作。
@@ -55,8 +89,50 @@
        已完成执行任务“MSBuild”的操作。
        由于 false 条件，已跳过任务“GetReferenceNearestTargetFrameworkTask”；('@(_ProjectReferenceTargetFrameworkPossibilities->Count())' != '0' and '$(ReferringTargetFrameworkForProjectReferences)' != '')计算为('0' != '0' and '.NETFramework,Version=v4.0' != '')。
      1>已完成在项目“variant.vcxproj”中生成目标“_GetProjectReferenceTargetFrameworkProperties”的操作。
-     1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets”中的目标“PrepareProjectReferences”(目标“ResolveProjectReferences”依赖于它):
+     1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets”中的目标“PrepareProjectReferences”(目标“CleanReferencedProjects”依赖于它):
      1>已完成在项目“variant.vcxproj”中生成目标“PrepareProjectReferences”的操作。
+     1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets”中的目标“CleanReferencedProjects”(目标“Clean”依赖于它):
+       由于 false 条件，已跳过任务“MSBuild”；('$(BuildingInsideVisualStudio)' != 'true' and '$(BuildProjectReferences)' == 'true' and '@(_MSBuildProjectReferenceExistent)' != '')计算为('true' != 'true' and 'true' == 'true' and '' != '')。
+     1>已完成在项目“variant.vcxproj”中生成目标“CleanReferencedProjects”的操作。
+     1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets”中的目标“CleanPublishFolder”(目标“Clean”依赖于它):
+       由于 false 条件，已跳过任务“RemoveDir”；('$(PublishDir)'=='$(OutputPath)app.publish\' and Exists('$(PublishDir)'))计算为('C:\Users\chuan\source\repos\c++\day01\variant\Debug\app.publish\'=='C:\Users\chuan\source\repos\c++\day01\variant\Debug\app.publish\' and Exists('C:\Users\chuan\source\repos\c++\day01\variant\Debug\app.publish\'))。
+     1>已完成在项目“variant.vcxproj”中生成目标“CleanPublishFolder”的操作。
+     1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets”中的目标“AfterClean”(目标“Clean”依赖于它):
+     1>已完成在项目“variant.vcxproj”中生成目标“AfterClean”的操作。
+       由于条件的计算结果为 false，已跳过目标“EntityClean”；('@(EntityDeploy)' != '')的计算结果为('' != '')。
+     1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppClean.targets”中的目标“BeforeCppClean”(目标“CppClean”依赖于它):
+     1>已完成在项目“variant.vcxproj”中生成目标“BeforeCppClean”的操作。
+     1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppClean.targets”中的目标“CoreCppClean”(目标“CppClean”依赖于它):
+       任务“MakeDir”
+       已完成执行任务“MakeDir”的操作。
+       正在使用程序集“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Build.CppTasks.Common.dll”中的“CppClean”任务。
+       任务“CppClean”
+       已完成执行任务“CppClean”的操作。
+       任务“WriteLinesToFile”
+       已完成执行任务“WriteLinesToFile”的操作。
+     1>已完成在项目“variant.vcxproj”中生成目标“CoreCppClean”的操作。
+     1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppClean.targets”中的目标“AfterCppClean”(目标“CppClean”依赖于它):
+     1>已完成在项目“variant.vcxproj”中生成目标“AfterCppClean”的操作。
+     1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppClean.targets”中的目标“PGInstrumentedClean”(目标“CppClean”依赖于它):
+       任务“Delete”
+       已完成执行任务“Delete”的操作。
+     1>已完成在项目“variant.vcxproj”中生成目标“PGInstrumentedClean”的操作。
+     1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppClean.targets”中的目标“CppClean”(目标“Clean”依赖于它):
+     1>已完成在项目“variant.vcxproj”中生成目标“CppClean”的操作。
+     1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets”中的目标“Clean”(目标“Rebuild”依赖于它):
+     1>已完成在项目“variant.vcxproj”中生成目标“Clean”的操作。
+       已跳过目标“SetTelemetryEnvironmentVariables”。以前的生成已成功。
+     1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.BuildSteps.Targets”中的目标“_PrepareForBuild”(目标“Build”依赖于它):
+       由于 false 条件，已跳过任务“CreateItem”；('%(CustomBuild.IncludeFileToTool)'!='')计算为(''!='')。
+     1>已完成在项目“variant.vcxproj”中生成目标“_PrepareForBuild”的操作。
+     1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets”中的目标“_PrepareForReferenceResolution”(目标“ResolveReferences”依赖于它):
+       由于 false 条件，已跳过任务“Message”；('$(_REFERENCE_DEBUG)'=='true')计算为(''=='true')。
+     1>已完成在项目“variant.vcxproj”中生成目标“_PrepareForReferenceResolution”的操作。
+       由于条件的计算结果为 false，已跳过目标“ComputeCrtSDKReference”；('@(ClCompile)'!='' and '$(WindowsAppContainer)'=='true' and '$(UseCrtSDKReference)' != 'false')的计算结果为('pch.cpp;variant.cpp'!='' and 'false'=='true' and '' != 'false')。
+     1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets”中的目标“BeforeResolveReferences”(目标“ResolveReferences”依赖于它):
+     1>已完成在项目“variant.vcxproj”中生成目标“BeforeResolveReferences”的操作。
+       已跳过目标“AssignProjectConfiguration”。以前的生成已成功。
+       已跳过目标“PrepareProjectReferences”。以前的生成已成功。
        由于条件的计算结果为 false，已跳过目标“_RemoveNameMetadataFromProjectReferenceItems”；('@(ProjectReference)'!='')的计算结果为(''!='')。
      1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets”中的目标“ResolveProjectReferences”(目标“ResolveReferences”依赖于它):
        由于 false 条件，已跳过任务“MSBuild”；('%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and ('$(BuildingInsideVisualStudio)' == 'true' or '$(BuildProjectReferences)' != 'true') and '$(VisualStudioVersion)' != '10.0' and '@(_MSBuildProjectReferenceExistent)' != '')计算为('' == 'true' and '' != '' and ('true' == 'true' or 'true' != 'true') and '15.0' != '10.0' and '' != '')。
@@ -118,7 +194,6 @@
      1>已完成在项目“variant.vcxproj”中生成目标“SetCABuildNativeEnvironmentVariables”的操作。
      1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets”中的目标“PrepareForBuild”(目标“ResolveAssemblyReferences”依赖于它):
        由于 false 条件，已跳过任务“VCMessage”；('$(DesignTimeBuild)' != 'true' and '$(ConfigurationPlatformExists)' != 'true')计算为('' != 'true' and 'true' != 'true')。
-       正在使用程序集“Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a”中的“MakeDir”任务。
        任务“MakeDir”
        已完成执行任务“MakeDir”的操作。
        由于 false 条件，已跳过任务“VCMessage”；('$(DesignTimeBuild)'!='true' and '$(WindowsAppContainer)'=='true' and '$(ConfigurationType)'!='Application' and '$(ConfigurationType)'!='DynamicLibrary' and '$(ConfigurationType)'!='StaticLibrary')计算为(''!='true' and 'false'=='true' and 'Application'!='Application' and 'Application'!='DynamicLibrary' and 'Application'!='StaticLibrary')。
@@ -161,15 +236,13 @@
        已跳过目标“PrepareForBuild”。以前的生成已成功。
        已跳过目标“PrepareForBuild”。以前的生成已成功。
      1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets”中的目标“InitializeBuildStatus”(目标“Build”依赖于它):
-       正在使用程序集“Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a”中的“ReadLinesFromFile”任务。
        任务“ReadLinesFromFile”
        已完成执行任务“ReadLinesFromFile”的操作。
-       正在使用程序集“Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a”中的“WriteLinesToFile”任务。
        任务“WriteLinesToFile”
        已完成执行任务“WriteLinesToFile”的操作。
        正在使用程序集“Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a”中的“Touch”任务。
        任务“Touch”
-         正在对“Debug\variant.tlog\unsuccessfulbuild”执行 Touch 任务。
+         正在创建“Debug\variant.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        已完成执行任务“Touch”的操作。
      1>已完成在项目“variant.vcxproj”中生成目标“InitializeBuildStatus”的操作。
        已跳过目标“PrepareProjectReferences”。以前的生成已成功。
@@ -265,21 +338,24 @@
        由于条件的计算结果为 false，已跳过目标“GenerateTargetFrameworkMonikerAttribute”；('$(GenerateTargetFrameworkAttribute)' == 'true')的计算结果为('false' == 'true')。
        由于条件的计算结果为 false，已跳过目标“ManagedIncrementalBuildPreProcessDependencyGraph”；('@(ClCompile)' != '' and '$(EnableManagedIncrementalBuild)' == 'True')的计算结果为('pch.cpp;variant.cpp' != '' and 'false' == 'True')。
      1>来自项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”的文件“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets”中的目标“ClCompile”(目标“_ClCompile”依赖于它):
-       由于 false 条件，已跳过任务“Delete”；('%(ClCompile.DebugInformationFormat)' != '' and '%(ClCompile.DebugInformationFormat)' != 'None' and '%(ClCompile.DebugInformationFormat)' != 'OldStyle' and '%(ClCompile.ProgramDataBaseFileName)' != '' and !Exists(%(ClCompile.ProgramDataBaseFileName)))计算为('EditAndContinue' != '' and 'EditAndContinue' != 'None' and 'EditAndContinue' != 'OldStyle' and 'Debug\vc141.pdb' != '' and !Exists(Debug\vc141.pdb))。
+       任务“Delete”
+         文件“Debug\variant.pch”不存在。正在跳过。
+       已完成执行任务“Delete”的操作。
        正在使用程序集“C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Build.CppTasks.Common.dll”中的“CL”任务。
        任务“CL”
-         读取跟踪日志:
-         	Debug\variant.tlog\CL.read.1.tlog
-         C:\USERS\CHUAN\SOURCE\REPOS\C++\DAY01\VARIANT\VARIANT\PCH.CPP 的输出:
-         	C:\USERS\CHUAN\SOURCE\REPOS\C++\DAY01\VARIANT\VARIANT\DEBUG\PCH.OBJ
-         	C:\USERS\CHUAN\SOURCE\REPOS\C++\DAY01\VARIANT\VARIANT\DEBUG\VARIANT.PCH
-         所有输出均为最新。
+         因缺少 PDB“Debug\vc141.pdb”而强行要求对所有源文件重新编译。
+         传递给工具的环境变量为:
+           VS_UNICODE_OUTPUT=1884
+         C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\bin\HostX86\x86\CL.exe /c /ZI /JMC /nologo /W3 /WX- /diagnostics:classic /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Yc"pch.h" /Fp"Debug\variant.pch" /Fo"Debug\\" /Fd"Debug\vc141.pdb" /Gd /TP /analyze- /FC /errorReport:prompt pch.cpp
+         跟踪命令:
+         C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i C:\Users\chuan\source\repos\c++\day01\variant\variant\Debug\variant.tlog /r C:\USERS\CHUAN\SOURCE\REPOS\C++\DAY01\VARIANT\VARIANT\PCH.CPP /b MSBuildConsole_CancelEvent1a0f7e38fc73437d9b9c1b2ebfcdab6f  /c "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\bin\HostX86\x86\CL.exe"  /c /ZI /JMC /nologo /W3 /WX- /diagnostics:classic /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Yc"pch.h" /Fp"Debug\variant.pch" /Fo"Debug\\" /Fd"Debug\vc141.pdb" /Gd /TP /analyze- /FC /errorReport:prompt pch.cpp
+         pch.cpp
        已完成执行任务“CL”的操作。
        由于 false 条件，已跳过任务“CL”；('%(ClCompile.PrecompiledHeader)' == 'Create' and '%(ClCompile.ExcludedFromBuild)'!='true' and '%(ClCompile.CompilerIteration)' == '')计算为('Use' == 'Create' and ''!='true' and '' == '')。
        由于 false 条件，已跳过任务“CL”；('%(ClCompile.PrecompiledHeader)' != 'Create' and '%(ClCompile.ExcludedFromBuild)'!='true' and '%(ClCompile.CompilerIteration)' == '' and @(ClCompile) != '')计算为('Create' != 'Create' and ''!='true' and '' == '' and pch.cpp != '')。
        任务“CL”
-         使用从以下项生成的缓存输入依赖关系表:
-         	C:\Users\chuan\source\repos\c++\day01\variant\variant\Debug\variant.tlog\CL.read.1.tlog
+         读取跟踪日志:
+         	Debug\variant.tlog\CL.read.1.tlog
          C:\USERS\CHUAN\SOURCE\REPOS\C++\DAY01\VARIANT\VARIANT\VARIANT.CPP 的输出:
          	C:\USERS\CHUAN\SOURCE\REPOS\C++\DAY01\VARIANT\VARIANT\DEBUG\VARIANT.OBJ
          将编译 variant.cpp，因为未能在跟踪日志中找到它。
@@ -288,34 +364,28 @@
          写入跟踪日志:
          	Debug\variant.tlog\CL.write.1.tlog
          传递给工具的环境变量为:
-           VS_UNICODE_OUTPUT=1744
+           VS_UNICODE_OUTPUT=1696
          C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\bin\HostX86\x86\CL.exe /c /ZI /JMC /nologo /W3 /WX- /diagnostics:classic /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Yu"pch.h" /Fp"Debug\variant.pch" /Fo"Debug\\" /Fd"Debug\vc141.pdb" /Gd /TP /analyze- /FC /errorReport:prompt variant.cpp
          跟踪命令:
-         C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i C:\Users\chuan\source\repos\c++\day01\variant\variant\Debug\variant.tlog /r C:\USERS\CHUAN\SOURCE\REPOS\C++\DAY01\VARIANT\VARIANT\VARIANT.CPP /b MSBuildConsole_CancelEvent833d708abd274bb1bf63147a063082a2  /c "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\bin\HostX86\x86\CL.exe"  /c /ZI /JMC /nologo /W3 /WX- /diagnostics:classic /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Yu"pch.h" /Fp"Debug\variant.pch" /Fo"Debug\\" /Fd"Debug\vc141.pdb" /Gd /TP /analyze- /FC /errorReport:prompt variant.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i C:\Users\chuan\source\repos\c++\day01\variant\variant\Debug\variant.tlog /r C:\USERS\CHUAN\SOURCE\REPOS\C++\DAY01\VARIANT\VARIANT\VARIANT.CPP /b MSBuildConsole_CancelEventa270f9a34b7c41c6a7cb4012a12bbb92  /c "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\bin\HostX86\x86\CL.exe"  /c /ZI /JMC /nologo /W3 /WX- /diagnostics:classic /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Yu"pch.h" /Fp"Debug\variant.pch" /Fo"Debug\\" /Fd"Debug\vc141.pdb" /Gd /TP /analyze- /FC /errorReport:prompt variant.cpp
          variant.cpp
-     1>c:\users\chuan\source\repos\c++\day01\variant\variant\variant.cpp(26): error C2143: 语法错误: 缺少“,”(在“(”的前面)
-         c:\users\chuan\source\repos\c++\day01\variant\variant\variant.cpp(26): note: 参见对正在编译的 类 模板 实例化 "IntegerMax<arg,rest...>" 的引用
-     1>c:\users\chuan\source\repos\c++\day01\variant\variant\variant.cpp(118): error C3861: “m_index”: 找不到标识符
-         c:\users\chuan\source\repos\c++\day01\variant\variant\variant.cpp(207): note: 参见对正在编译的 类 模板 实例化 "Variant<Types...>" 的引用
-     1>c:\users\chuan\source\repos\c++\day01\variant\variant\variant.cpp(175): error C2760: 语法错误: 意外的令牌“<”，预期的令牌为“;”
-         c:\users\chuan\source\repos\c++\day01\variant\variant\variant.cpp(175): note: 此诊断出现在编译器生成的函数“void Variant<Types...>::Visit(F &&)”中
-     1>c:\users\chuan\source\repos\c++\day01\variant\variant\variant.cpp(182): error C2760: 语法错误: 意外的令牌“<”，预期的令牌为“;”
-         c:\users\chuan\source\repos\c++\day01\variant\variant\variant.cpp(182): note: 此诊断出现在编译器生成的函数“void Variant<Types...>::Visit(F &&,Rest &&...)”中
+     1>c:\users\chuan\source\repos\c++\day01\variant\variant\variant.cpp(280): error C2672: “to_function”: 未找到匹配的重载函数
+     1>c:\users\chuan\source\repos\c++\day01\variant\variant\variant.cpp(280): error C2893: 未能使函数模板“function_traits<F>::stl_function_type to_function(F &&)”专用化
+         c:\users\chuan\source\repos\c++\day01\variant\variant\variant.cpp(280): note: 用下列模板参数:
+         c:\users\chuan\source\repos\c++\day01\variant\variant\variant.cpp(280): note: “F=main::<lambda_641efcf631ce55765049f2305ba094c0>”
          命令已退出，代码为 2。
        已完成执行任务“CL”的操作 - 失败。
      1>已完成在项目“variant.vcxproj”中生成目标“ClCompile”的操作 - 失败。
-     1>已完成生成项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”(Build 个目标)的操作 - 失败。
+     1>已完成生成项目“C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”(Rebuild 个目标)的操作 - 失败。
 
 生成失败。
 
-       “C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”(Build 目标) (1) ->
+       “C:\Users\chuan\source\repos\c++\day01\variant\variant\variant.vcxproj”(Rebuild 目标) (1) ->
        (ClCompile 目标) -> 
-         c:\users\chuan\source\repos\c++\day01\variant\variant\variant.cpp(26): error C2143: 语法错误: 缺少“,”(在“(”的前面)
-         c:\users\chuan\source\repos\c++\day01\variant\variant\variant.cpp(118): error C3861: “m_index”: 找不到标识符
-         c:\users\chuan\source\repos\c++\day01\variant\variant\variant.cpp(175): error C2760: 语法错误: 意外的令牌“<”，预期的令牌为“;”
-         c:\users\chuan\source\repos\c++\day01\variant\variant\variant.cpp(182): error C2760: 语法错误: 意外的令牌“<”，预期的令牌为“;”
+         c:\users\chuan\source\repos\c++\day01\variant\variant\variant.cpp(280): error C2672: “to_function”: 未找到匹配的重载函数
+         c:\users\chuan\source\repos\c++\day01\variant\variant\variant.cpp(280): error C2893: 未能使函数模板“function_traits<F>::stl_function_type to_function(F &&)”专用化
 
     0 个警告
-    4 个错误
+    2 个错误
 
-已用时间 00:00:03.08
+已用时间 00:00:05.88
