@@ -110,7 +110,7 @@ struct VariantHepler;
 template<typename T,typename... Args>
 struct VariantHepler<T, Args...> {
 	inline static void Destory(std::type_index id, void * data) {
-		if (id == type_index(typeid(T))) {
+		if (id == std::type_index(typeid(T))) {
 			reinterpret_cast<T*>(data)->~T();
 		}
 		else {
@@ -118,7 +118,7 @@ struct VariantHepler<T, Args...> {
 		}
 	}
 	inline static void move(std::type_index old_t,void *old_v,void * new_v) {
-		if (old_t==type_index(typeid(T))) {
+		if (old_t==std::type_index(typeid(T))) {
 			new (new_v)T(std::move(*reinterpret_cast<T*>(old_v)));
 
 		}
@@ -127,7 +127,7 @@ struct VariantHepler<T, Args...> {
 		}
 	}
 	inline static void copy(std::type_index old_t, const void * old_v, void * new_v) {
-		if (old_t==type_index(typeid(T))) {
+		if (old_t==std::type_index(typeid(T))) {
 
 			new (new_v)T(*reinterpret_cast<const T*>(old_v));
 		}
@@ -186,15 +186,15 @@ public:
 		Helper_t::Destory(m_typeIndex, &m_data);
 		typedef typename std::remove_reference<T>::type U;
 		new (&m_data)U(std::forward<T>(value));
-		m_typeIndex = type_index(typeid(T));
+		m_typeIndex = std::type_index(typeid(T));
 
 	}
 	template<typename T>
 	bool Is() const {
-		return (m_typeIndex == type_index(typeid(T)));
+		return (m_typeIndex == std::type_index(typeid(T)));
 	}
 	bool Empty() const {
-		return m_typeIndex == type_index(typeid(void));
+		return m_typeIndex == std::type_index(typeid(void));
 	}
 
 	std::type_index Type() const {
@@ -214,16 +214,16 @@ public:
 	int GetIndexOf() {
 		return Index<T, Types...>::value;
 	}
-	/*template<typename F>
+	template<typename F>
 	void Visit(F&& f) {
-		using T = typename function_traits<F>::arg<0>::type;
+		using T = typename function_traits<F>::args<0>::type;
 		if (Is<T>()) {
 			f(Get<T>());
 		}
 	}
 	template<typename F,typename... Rest>
 	void Visit(F&& f, Rest&&... rest) {
-		using T = typename function_traits<F>::arg<0>::type;
+		using T = typename function_traits<F>::args<0>::type;
 		if (Is<T>()) {
 			Visit(std::forward<F>(f));
 		}
@@ -232,7 +232,7 @@ public:
 			Visit(std::forward<Rest>(rest)...);
 		}
 
-	}*/
+	}
 	bool operator==(const Variant& rhs) const {
 		return m_typeIndex == rhs.m_typeIndex;
 	}
@@ -251,13 +251,18 @@ private:
 };
 template<typename F>
 typename function_traits<F>::stl_function_type to_function(F&& f) {
+	using T = typename function_traits<F>::args<0>::type;
 	return static_cast<typename function_traits<F>::stl_function_type>(std::forward<F>(f));
 }
 
 template<typename F>
 typename function_traits<F>::stl_function_type to_function(const F& f) {
+	using T = typename function_traits<F>:: args<0>::type;
+	
 	return static_cast<typename function_traits<F>::stl_function_type>(std::move(f));
 }
+
+
 
 
 int main()
@@ -266,7 +271,7 @@ int main()
 
 
 	//std::cout<<typeid(cv::IndexType<1>)<<std::endl;
-	/*cv v = 10;
+	cv v = 10;
 	int i = v.GetIndexOf<std::string>();
 	v.Visit([](double i) {std::cout<<i<<std::endl; },
 		[](short i) {std::cout <<i << std::endl; },
@@ -275,7 +280,7 @@ int main()
 		);
 	bool empl = v.Empty();
 	std::cout<<v.Type().name()<<std::endl;
-*/
+
 	
 	auto f=to_function([](int i) {return i; });
 	std::cout << "Hello World!\n"; 
